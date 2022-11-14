@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <title>Video Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div class="container mx-auto mt-8 pb-24">
+    <h1 class="mb-16 text-2xl">Browser Video Format Test</h1>
+    <div class="grid grid-cols-4 gap-4">
+
+        <div>
+            <h2>M2V</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720.m2v"></video>
+        </div>
+
+
+        <div>
+            <h2>3GP</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.3gp"></video>
+        </div>
+
+
+        <div>
+            <h2>HEVC</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.hevc"></video>
+        </div>
+
+
+        <div>
+            <h2>M4V</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.m4v"></video>
+        </div>
+
+
+        <div>
+            <h2>MKV</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.mkv"></video>
+        </div>
+
+
+        <div>
+            <h2>MOV</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.mov"></video>
+        </div>
+
+
+        <div>
+            <h2>VOB</h2>
+            <video autoplay muted controls src="./videos/sample_1280x720_surfing_with_audio.vob"></video>
+        </div>
+
+
+        <div>
+            <h2>AVI</h2>
+            <video autoplay muted controls src="./videos/sample_1920x1080.avi"></video>
+        </div>
+
+
+        <div>
+            <h2>MTS</h2>
+            <video autoplay muted controls src="./videos/sample_640x360.mts"></video>
+        </div>
+
+
+        <div>
+            <h2>MPEG</h2>
+            <video autoplay muted controls src="./videos/sample_960x400_ocean_with_audio.mpeg"></video>
+        </div>
+
+
+        <div>
+            <h2>MPG</h2>
+            <video autoplay muted controls src="./videos/sample_960x400_ocean_with_audio.mpg"></video>
+        </div>
+
+
+        <div>
+            <h2>OGV</h2>
+            <video autoplay muted controls src="./videos/sample_960x400_ocean_with_audio.ogv"></video>
+        </div>
+
+
+        <div>
+            <h2>WMV</h2>
+            <video autoplay muted controls src="./videos/sample_960x400_ocean_with_audio.wmv"></video>
+        </div>
+
+    </div>
+
+</div>
+<div class="container mx-auto pb-24">
+    <div class="flex">
+        <div class="mr-8">
+            <h2>Test Custom Video</h2>
+            <input type="file"
+                   id="sample" name="sample"
+                   accept="*"
+            />
+        </div>
+        <div class="flex-1">
+            <div class="w-96 h-96">
+                <video autoplay muted controls
+                       id="sample_video"
+                       style="max-width: 50rem"
+                       src="./videos/sample_960x400_ocean_with_audio.wmv"></video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript">
+  window.onload = function () {
+    document.getElementById('sample').onchange = function (e) {
+      document.getElementById('sample_video').src = URL.createObjectURL(e.target.files[0])
+    }
+  }
+</script>
+</body>
+
+</html>
